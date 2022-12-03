@@ -1,19 +1,17 @@
-﻿
-@model PhotoSharingApplication.Models.Photo
+﻿@model PhotoSharingApplication.Models.Photo
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title> Photo: @Model.Title </title>
+    <title> Photo: @Model.Title</title>
 </head>
 <body>
     <div>
         <h2>"@Model.Title"</h2>
-
-        <img width="800" src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" />
-
+        <img width="800" src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })
+" />
         <p>
             @Html.DisplayFor(
             model =>
@@ -32,6 +30,7 @@
         <p>
             @Html.ActionLink("Back to List", "Index")
         </p>
+
 
     </div>
 </body>

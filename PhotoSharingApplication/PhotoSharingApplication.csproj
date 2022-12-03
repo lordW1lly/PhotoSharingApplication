@@ -95,6 +95,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\PhotoSharingStyles.css" />
+    <Content Include="Expression Web Mock Up\Content\allphotos.html" />
+    <Content Include="Expression Web Mock Up\Content\default.html" />
+    <Content Include="Expression Web Mock Up\Content\Photo.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -132,6 +136,8 @@
     <Content Include="Views\Photo\Index.cshtml" />
     <Content Include="Views\Shared\_PhotoGallery.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

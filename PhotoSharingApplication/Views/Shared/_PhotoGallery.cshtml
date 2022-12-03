@@ -1,41 +1,39 @@
-﻿
-@model IEnumerable<PhotoSharingApplication.Models.Photo>
+﻿@model IEnumerable<PhotoSharingApplication.Models.Photo>
+
+
 @foreach (var item in Model)
 {
-    <h3>"@item.Title"</h3>
+    <div class="photo-index-card">
+        <h3>"@item.Title"</h3>
+        if (item.PhotoFile != null)
+        {
+        <img class="photo-metadata" width="200"
+             src="@Url.Action("GetImage",
+"Photo",
+new { id = item.PhotoID })" />
 
-    if (item.PhotoFile != null)
-    {
-        <img width="200"
-             src="@Url.Action("GetImage","Photo",new { id = item.PhotoID })" />
-    }
-
+        }
+    </div>
+    <div class="photo-metadata"></div>
     <p>
-        Created By:
-        @Html.DisplayFor(
-        model => item.UserName)
+        <span class="display-label">
+            Created By:
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(
+            model => item.UserName)
+        </span>
     </p>
-
     <p>
-        Created On:
-        @Html.DisplayFor(
-        model => item.CreatedDate)
+        <span class="display-label">
+            Created On:
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(
+            model => item.CreatedDate)
+        </span>
     </p>
-
-    @Html.ActionLink("Display", "Display", new { id = item.PhotoID })
-
+    @Html.ActionLink("Display", "Display",
+new { id = item.PhotoID })
 
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_PhotoGallery</title>
-</head>
-<body>
-    <div>
-    </div>
-</body>
-</html>

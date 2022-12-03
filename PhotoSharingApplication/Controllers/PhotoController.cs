@@ -99,6 +99,21 @@ namespace PhotoSharingApplication.Controllers
             return View("Delete", photo);
         }
 
+        //GET: Photo/GetImage/id
+        public FileContentResult GetImage(int id)
+        {
+            Photo photo = context.photos.Find(id);
+            if (photo != null)
+            {
+                return File(photo.PhotoFile, photo.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
 
 
 
